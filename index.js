@@ -789,6 +789,16 @@ app.delete('/api/driver-reports/:driverReportId', async (req, res) => {
   }
 });
 
+// Test route - FOR TESTING PURPOSES ONLY
+app.get('/api/test', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Test route is working!',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
+
 // Start server
 const PORT = 3001;
 app.listen(PORT, () => {
